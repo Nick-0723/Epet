@@ -64,8 +64,7 @@
           {url: '01.jpg'},
           {url: '02.jpg'},
           {url: '03.jpg'},
-          {url: '04.jpg'},
-          {url: '05.jpg'}
+          {url: '04.jpg'}
         ]
       }
     },
