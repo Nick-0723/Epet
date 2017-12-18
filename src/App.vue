@@ -14,7 +14,7 @@
         <router-link to="/cart"></router-link>
       </div>
       <div class="footer-item user" @click="toggleShow">
-        <router-link :toggleShow="toggleShow" to="/login"  ></router-link>
+        <router-link :toggleShow="toggleShow" to="/login"></router-link>
       </div>
     </div>
 
@@ -23,13 +23,13 @@
 
 <script>
   export default {
-  data(){
-    return{
+  data() {
+    return {
       isShow: true
     }
   },
-  methods:{
-    toggleShow(){
+  methods: {
+    toggleShow() {
        /*this.isShow = false*/
     },
   }

@@ -1,24 +1,27 @@
-// 引入vue和vuerouter
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-// 使用Vue-router
+// 引入vue 和 vuerouter
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+// 使用 Vue-router
 Vue.use(VueRouter);
-// 引入模块
-import main from '../pages/main/main.vue'
-import cart from '../pages/cart/cart.vue'
-import category from '../pages/category/category.vue'
-import tab1 from '../pages/category/tab1.vue'
-import tab2 from '../pages/category/tab2.vue'
-import login from '../pages/user/login.vue'
-import register from '../pages/user/register.vue'
-import place from '../pages/place/place.vue'
-// 暴露
+// 引入各个模块
+import main from '../pages/main/main.vue';
+import cart from '../pages/cart/cart.vue';
+import category from '../pages/category/category.vue';
+import tab1 from '../pages/category/tab1.vue';
+import tab2 from '../pages/category/tab2.vue';
+
+/* 引入登录 / 注册的模块 */
+import login from '../pages/user/login.vue';
+import register from '../pages/user/register.vue';
+
+import place from '../pages/place/place.vue';
+// 暴露出去
 export default new VueRouter({
-  linkActiveClass:'active',
+  linkActiveClass: 'active',
   routes:[
     {
       path:'/',
-      redirect :'/main'
+      redirect :'/login'
     },
     {
       path:'/main',
@@ -39,7 +42,7 @@ export default new VueRouter({
         {
           path: 'tab2',
           component: tab2
-        },
+        }
       ]
     },
     {
