@@ -20,7 +20,6 @@ Vue.component(Cell.name, Cell);
 
 // 引入控制地址的选择插件
 import Distpicker from 'v-distpicker';
-
 // 引入图标库
 import './assets/stylus/fonts.styl';
 import './mock/mockServer';
@@ -42,6 +41,7 @@ Vue.component(Button.name, Button);     /* 购物车里面的 */
 Vue.use(VueLazyload, {
   loading
 });
+
 
 // 地址选择插件
 Vue.component('v-distpicker', Distpicker);
