@@ -16,7 +16,7 @@
         <li>
           <span class="s2"></span>
           <input type="text" placeholder="图片验证">
-          <a><img src="./seccode.png" alt=""></a>
+          <span class="li_span" id="v_container" style="width: 100px;height: 30px;display: inline-block"></span>
         </li>
         <li>
           <span class="s2"></span>
@@ -42,15 +42,20 @@
 </template>
 
 <script>
+  import '../../../static/js/gVerify';
   import { Toast } from 'mint-ui';
-  import {mapState} from  'vuex'
-  import axios from 'axios'
+  import {mapState} from  'vuex';
+  import axios from 'axios';
+
   export default{
+    mounted(){
+      new GVerify("v_container");
+    },
     data(){
       return {
         isfirst:true,
         isNext:false,
-        phone:'',
+        phone:'15178781857',
         code:'',
         username : '',
         password : '',
@@ -60,13 +65,17 @@
     methods:{
       /*发送验证码*/
       sendCode () {
-        const url = `/sendcode?phone = ${this.phone}`
+        //sendcode?phone=13716962779&code=123123
+        const url = `/api/sendcode?phone=${this.phone}`
         axios.get(url).then(response => {
          /* alert(response.data.code)*/ // 0
           Toast({
             message: '发送验证码成功',
             iconClass: 'icon icon-success'
           })
+          console.log(response.data);
+          console.log(response.data.code);
+          console.log(response.data.data);
         })
       },
       /*注册且登录*/
@@ -104,7 +113,7 @@
       },
       /*去登录*/
       next(){
-        /*//  获得输入号码
+        /*!//  获得输入号码
         const phone = this.phone.trim()
         const user=this.user
         // 筛选所有的用户是否有手机号码一样的
@@ -214,6 +223,10 @@
             font-family: "Microsoft Yahei",tahoma,arial;
             outline: none;
             background-color: #fff
+          .li_span
+            position absolute
+            top:5px
+            right 10px
           &>span
             float: left;
             display: inline;
@@ -221,6 +234,7 @@
             height: 21px;
             background-size: contain;
             margin: 1px 0 0 -25px;
+
             &.s1
               background: url(./ico3.png) no-repeat;
               background-size: contain;

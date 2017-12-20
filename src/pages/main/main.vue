@@ -57,7 +57,7 @@
   import mainfooter from '../../components/mainfooter/mainfooter.vue';
 
   export default {
-    data(){
+    data() {
       return {
         file: 'banner1',
         imgList: [
@@ -94,11 +94,12 @@
     }
   }
 </script>
+
 <style lang="stylus" rel="stylesheet/stylus">
   .allmodul
     width 100%
     height 522px
     position relative
     overflow hidden
-    float: left
+    float left
 </style>

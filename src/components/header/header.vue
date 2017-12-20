@@ -60,12 +60,12 @@
         this.active = index
       }
     },
-     mounted() {
-       var navScroll=new BScroll(this.$refs.nav, {
-         click: true,
-         scrollX:true
-       })
-     },
+    mounted() {
+      var navScroll=new BScroll(this.$refs.nav, {
+        click: true,
+        scrollX: true
+      })
+    },
     components: {
 
     }

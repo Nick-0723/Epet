@@ -45,6 +45,7 @@ export default new VueRouter({
         }
       ]
     },
+
     {
       path:'/cart',
       component: cart

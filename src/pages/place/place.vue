@@ -28,17 +28,19 @@
     <div class="contentWrapper" ref="content">
       <div class="content" >
         <div class="animal" >
-          <span class="pet">猫猫站</span>
-          <span class="on">狗狗站</span>
+          <span class="pet">狗狗站</span>
+          <span class="on">猫猫站</span>
           <span class="pet">水族站</span>
         </div>
-        <!--<div class="header">
+        <!-- 选择地址部分 -->
+        <div class="header">
           当前默认地址 : {{province}}{{city}}{{area}}
         </div>
-        <v-distpicker type="mobile" @province="onProvince" @city="onCity"
+        <v-distpicker type="mobile" @province="onProvince"
+                                    @city="onCity"
                                     @area="onArea"
                                     @selected="onSelected">
-        </v-distpicker>-->
+        </v-distpicker>
       </div>
     </div>
   </div>
@@ -66,10 +68,10 @@
     },
     methods: {
       back () {
-          this.$emit('isBack')
+        this.$emit('isBack')
       },
       onSelected(data) {
-         this.$router.replace('/main')
+        this.$router.replace('/main')
       },
       onProvince(data) {
         console.log(data);
@@ -120,6 +122,7 @@
         background-position: -217px 0;
         top: 10px;
         right: 10px;
+
     .hiden
       width 100%
       border-bottom: 1px solid #d7d7d7;
@@ -127,11 +130,11 @@
       padding: 10px 0;
       display flex
       transition all 2s
-      &>a
+      & > a
         display block
         width 25%
         height 50px
-        &>span
+        & > span
           display block
           background: url(../../assets/imgs/icon.png) no-repeat;
           background-size: 234px 163px;
@@ -146,10 +149,11 @@
             background-position -170px -91px
           &.icon5
             background-position -170px -133px
-        &>p
+        & > p
           display block
           text-align center
           line-height 20px
+
     .contentWrapper
       width 100%
       height 600px
@@ -186,7 +190,8 @@
           /*position absolute*/
           /*top 50px*/
           width 100%
-        .address
+
+        .address         /* 默认的选择器 */
           color black
           .address-header
              display none

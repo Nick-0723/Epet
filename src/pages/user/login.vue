@@ -108,7 +108,6 @@
             <span class="s2"></span>
             <input type="text" placeholder="输入图片内容">
             <a>
-              <!--<img src="./seccode.png" alt="" v-show="!imgbase64" >-->
               <img src="/captlogin" @click="update">
             </a>
           </li>
@@ -151,8 +150,7 @@
         username: '',
         number: '',
         password: '',
-        code: '',
-        /*imgbase64: ''*/
+        code: ''
       }
     },
     mounted(){
@@ -203,12 +201,15 @@
       },
       //发送短信验证码
       sendCode () {
-        const url = `/sendcode?phone=${this.number}`
+        const url = "/api/sendcode?phone='15178781857'"
         axios.get(url).then(response => {
           Toast({
             message: '发送验证码成功',
             iconClass: 'icon icon-success'
           })
+          console.log(response.data);
+          console.log(response.data.code);
+          console.log(response.data.data);
         })
       },
       /*动态验证码验证*/
